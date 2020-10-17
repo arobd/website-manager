@@ -38,6 +38,28 @@ After doing all fo these, serve the application
 
 `php artisan serve`
 
+You also need to run a cron job for running uptime checker every minute. You can do these ways: 
+
+**On localhost**
+
+Make a new tab on terminal & run command below
+
+`php artisan schedule:work`
+
+You will start seeing schedules in every one minute. It will automatically check all websites every minutes. 
+
+**On Server**
+
+You can easily do via cron, on terminal, run command
+
+`crontab -e`
+
+Then add this line: 
+
+`* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1`
+
+Save & exit. 
+
 
 ## Disclaimer
 
